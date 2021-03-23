@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>dotnet learning</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/a11y-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>    <script src='js/main.js'></script>
+</head>
+<body>
+    <h1>.NET C#講座 1日目</h1>
+
+    <p>
+        ブラウザ上で動作するC#コーディング環境で、まずは簡単にプログラムに触れてみましょう。
+    </p>
+    <p>
+        コードを<a href="https://dotnet.microsoft.com/platform/try-dotnet" target="_blank" rel="noopener">Try DOTNET</a>のTry .NET in the browserに貼りつけることで、実行結果を確認できます。
+    </p>
+    <p>
+        <img src="image/2021-03-23-15-15-10.png" />
+    </p>
+
+    <h2>変数と代入</h2>
+    <p>
+        変数とは、数値や文字列、その他データを入れておくための入れ物です。<br />
+        変数には「型」と「名前」が存在し、変数を作る時にそれぞれを指定します。
+    </p>
+    <pre><code>
+string displayText;
+    </code></pre>
+    <p>
+        上記のコード中の「string」は、変数の型を指定するもので、文字列型であることを意味しています。<br />
+        「displayText」は変数の名前です。この変数の宣言の後、変数を実際に使う時にこの名前を使用します。<br />
+        「;」は行末を意味し、変数宣言はここまでであることを意味します。
+    </p>
+    <p>
+        試しに、Try.NETに下記のコードを入力し、「Run Code」ボタンをクリックしてみましょう。
+    </p>
+    <pre><code>
+string displayText;
+
+displayText = "Hello world";
+
+Console.WriteLine(displayText);
+    </code></pre>
+
+    <p>
+        <img src="image/2021-03-23-15-22-34.png" />
+    </p>
+
+    <p>
+        consoleの表示が上記画像のようになれば成功です。<br />
+        displayText = "Hello world";<br />
+        上記の行では、変数「displayText」に、「Hello world」という文字列を代入し、変数の中身を変更しています。<br />
+        代入は「=」演算子で行い、必ず左辺の変数に対して右辺の内容を代入します。<br />
+        <br />
+        結果、下記の行でconsoleに出力される内容が代入した文字列と同じものになります。<br />
+        Console.WriteLine(displayText);<br />
+        <br />
+        Console.WriteLine(出力する内容); は、consoleに括弧の中の内容を出力する指示です。<br />
+        括弧の中には、変数や文字列そのものを指定することができます。
+    </p>
+
+    
+    <h2>計算</h2>
+
+    <p>
+        プログラミングの用途には、数学的計算を伴うものが多くあります。<br />
+        加減乗除等の基本的な計算については、+ - * / 等の一般的な計算演算子を用いて指示を出すことができます。
+    </p>
+    
+    <pre><code>
+int number = 323;
+int result;
+
+result = number * number;
+
+Console.WriteLine(result);
+    </code></pre>
+
+    <p>
+        Try.NETに上記のコードを入力し、「Run Code」ボタンをクリックしてみましょう。
+    </p>
+
+
+    <p>
+        <img src="image/2021-03-23-15-50-56.png" />
+    </p>
+
+    <p>
+        323に323を掛け算した結果が表示されているはずです。<br />
+        <br />
+        result = number * number;<br />
+        上記の行では変数resultに、変数numberの内容「323」自身を掛け算した結果を代入しています。<br />
+        「*」を「+」「-」「/」に変えた場合、結果がどうなるかも試してみてください。
+    </p>
+
+    
+    <h2>変換</h2>
+
+    <p>
+        変数には入れられるデータの種類を表す「型」がありますが、その「型」を別の種類に変換する操作を行いたい場合があります。<br />
+        下記の例では、int.Parse()により、string型で数字が書かれた文字列を数値型に変換しています。
+    </p>
+
+    <pre><code>
+string inputText = Console.ReadLine();
+int number = int.Parse(inputText);
+
+Console.WriteLine(number);
+    </code></pre>
+
+    <p>
+        上記コードを実行して、入力を求めるダイアログには数値を入れてみましょう。<br />
+        入力を求めるダイアログが何度も開いて閉じない場合、ESCキーを押します。
+    </p>
+
+    <p>
+        <img src="image/2021-03-23-16-51-20.png" />
+    </p>
+
+    
+    <h2>コメント</h2>
+
+    <p>
+        プログラムコード中にコメントを書くことで、処理内容が人にわかりやすくなります。<br />
+        また、一時的に動作させたくないコードをコメントにすることで、すぐに戻せるようにコードを除外できるようになります。
+    </p>
+
+    <pre><code>
+string displayText;
+
+// 表示する文字列を代入します
+displayText = "Hello world";
+
+// コメントになっていればコードは動作しません
+// displayText = "this is comment";
+
+// 文字列をコンソールに表示します
+Console.WriteLine(displayText);
+    </code></pre>
+
+
+    
+    <h2>関数・メソッド</h2>
+
+    <p>
+        関数・メソッドとは、処理のまとまりごとに部品化して必要な時に使う仕組みのことです。<br />
+        今までに登場していたConsole.WriteLine()やint.Parse()も、C#があらかじめ用意してくれていた関数・メソッドを使っていたことになります。<br />
+        この関数・メソッドは自分で作って利用することもできるため、繰り返し使う処理はメソッドにしておくと便利です。
+    </p>
+    <pre><code>
+// 関数・メソッドを呼び出す
+int number = power(323);
+
+// 結果を表示
+Console.WriteLine(number);
+
+// 関数定義。
+// 関数の定義は、実際に利用する行より下に書いても良い
+// int num はパラメータ。関数の中で計算したい値を呼び出し元から受け取る
+int power(int num){
+    int result = num * num;
+    return(result);
+}
+    </code></pre>
+
+</body>
+</html>
