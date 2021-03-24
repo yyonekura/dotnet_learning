@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>dotnet learning｜3日目</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/a11y-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src='js/main.js'></script>
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">1日目</a></li>
+        <li><a href="day2.html">2日目</a></li>
+        <li><a href="day3.html">3日目</a></li>
+    </ul>
+    <h1>.NET C#講座 3日目</h1>
+    
+    <h2>C#の構文の理解を進める</h2>
+
+    <p>
+        1日目と同様、実際にコードを動作させながらC#の構文の理解を勧めましょう。<br />
+        2日目に用意した実行環境か、<a href="https://dotnet.microsoft.com/platform/try-dotnet" target="_blank" rel="noopener">Try DOTNET</a>を利用して動作を確認します。
+    </p>
+
+    <h2>条件分岐文</h2>
+
+    <p>
+        条件分岐文ifは、プログラム中の条件によって処理を変更したい場合に使用します。
+    </p>
+
+    <pre><code>
+// 数値の入力を受け付ける
+string inputText = Console.ReadLine();
+int number = int.Parse(inputText);
+
+// numberが偶数であるかを判断
+if(number % 2 == 0){
+    Console.WriteLine("偶数です");
+}
+else {
+    Console.WriteLine("奇数です");
+}
+    </code></pre>
+
+    <h2>繰り返し文</h2>
+
+    <p>
+        繰り返し文forは、プログラム中で何度も繰り返す処理を記述する際に利用します。
+    </p>
+    
+    <pre><code>
+// 10回繰り返す。
+// セミコロン区切りで、それぞれ
+//（最初の一回のみ実行）；（条件式が成立する限り繰り返す）；（一周ごとの処理）
+// を意味します。
+for(int i = 0 ; i &lt; 10 ; i++){
+    Console.WriteLine(i);
+}
+    </code></pre>
+
+    <h2>ジャンプ文</h2>
+
+    <p>
+        プログラムの実行中、特定の位置に処理の順番を移動する（ジャンプする）時に使用する構文です。<br />
+        下記の例では、continue文でfor文の先頭に戻っています。
+    </p>
+
+    <pre><code>
+// 0から9の数のうち、奇数のみ出力する。
+for(int i = 0 ; i &lt; 10 ; i++){
+    if(i % 2 == 0){
+        // continueにたどり着いたら、このループを終了してforの先頭に戻る
+        continue;
+    }
+    Console.WriteLine(i);
+}    
+    </code></pre>
+
+    <h2>基本データ型を理解する</h2>
+    <h2>変数と配列を理解する</h2>
+    <h2>演算子を理解する</h2>
+    <h2>名前空間と型を理解する</h2>
+</body>
+</html>
