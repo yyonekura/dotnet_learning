@@ -46,6 +46,27 @@ else {
 }
     </code></pre>
 
+    <p>
+        条件分岐文switchは、一つの変数の中身が複数通りに分岐するようなプログラムを書く際に便利な構文です。
+    </p>
+
+    <pre><code>
+int caseSwitch = 1;
+
+switch (caseSwitch)
+{
+    case 1:
+        Console.WriteLine("Case 1");
+        break;
+    case 2:
+        Console.WriteLine("Case 2");
+        break;
+    default:
+        Console.WriteLine("Default case");
+        break;
+}
+    </code></pre>
+
     <h2>繰り返し文</h2>
 
     <p>
@@ -60,6 +81,20 @@ else {
 for(int i = 0 ; i &lt; 10 ; i++){
     Console.WriteLine(i);
 }
+    </code></pre>
+
+    <p>
+        繰り返し文foreachは、あらかじめ決まったデータの集まりがあり、それを1件ずつ処理する場合に便利な繰り返しの構文です。<br />
+        下記の例では、変数の配列に入った一連の数値を一つずつ取り出して出力しています。<br />
+        配列の詳細については、後の項目で紹介します。
+    </p>
+
+    <pre><code>
+    int[] numbers = { 4, 5, 6, 1, 2, 3, -2, -1, 0 };
+    foreach (int i in numbers)
+    {
+        System.Console.Write("{0} ", i);
+    }
     </code></pre>
 
     <h2>ジャンプ文</h2>
