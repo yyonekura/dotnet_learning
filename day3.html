@@ -90,11 +90,11 @@ for(int i = 0 ; i &lt; 10 ; i++){
     </p>
 
     <pre><code>
-    int[] numbers = { 4, 5, 6, 1, 2, 3, -2, -1, 0 };
-    foreach (int i in numbers)
-    {
-        System.Console.Write("{0} ", i);
-    }
+int[] numbers = { 4, 5, 6, 1, 2, 3, -2, -1, 0 };
+foreach (int i in numbers)
+{
+    System.Console.Write("{0} ", i);
+}
     </code></pre>
 
     <h2>ジャンプ文</h2>
@@ -112,11 +112,66 @@ for(int i = 0 ; i &lt; 10 ; i++){
         continue;
     }
     Console.WriteLine(i);
-}    
+}
     </code></pre>
 
-    <h2>基本データ型を理解する</h2>
+    <h2>基本データ型を理解する・整数型と実数型</h2>
+
+    <p>
+        数値型には、整数型と実数型が存在します。<br />
+        整数型は小数点以下を持たない数のカウンタや物品の数等に使用することになります。<br />
+        実数型（浮動小数点型）は温度や長さ、重さ等整数のみでは扱えない各種データを格納するのに使用します。
+    </p>
+
+    <p>
+        例として、下記のように実数型と整数型では格納可能な値に違いが出ます。
+    </p>
+
+    <pre><code>
+// 実数の値を代入
+double doublenumber = 3.14;
+
+// 整数型に変換する
+// 小数点以下は切り捨てられる
+int intnumber = (int)doublenumber;
+
+Console.WriteLine(doublenumber);
+Console.WriteLine(intnumber);
+    </code></pre>
+
+    <h2>基本データ型を理解する・論理型</h2>
+
+    <p>
+        論理型は、真偽（trueとfalse）の二種類だけを持つデータ型です。<br />
+        先述したif文は、括弧の中の真偽値がtrueかfalseかによって、処理を分岐しています。<br />
+        if文の条件に利用する比較式は、条件が成立していた場合にはtrueを、そうでなければfalseを結果として返す動作をします。
+    </p>
+
+    <pre><code>
+// 比較式が正しければTrue、誤りであればFalseが表示される
+Console.WriteLine(1 + 2 == 3);
+Console.WriteLine(10 + 1 == 1);
+
+// 論理型はbool型の変数に保存できる
+bool check = 1 + 2 == 3;
+Console.WriteLine(check);
+    </code></pre>
+
     <h2>変数と配列を理解する</h2>
+
+    <p>
+        配列は、変数を複数個まとめて扱うことができる構文です。<br />
+        各曜日の名前を一括して扱ったり、日付ごとの売上を順番に処理したりと、繰り返し処理したいデータを格納するのに向いています。
+    </p>
+
+<pre><code>
+string[] weekDays2 = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+foreach (int i in weekDays2)
+{
+    System.Console.Write(i);
+}
+</code></pre>
+
     <h2>演算子を理解する</h2>
     <h2>名前空間と型を理解する</h2>
 </body>
