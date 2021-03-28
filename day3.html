@@ -164,7 +164,67 @@ bool check = 1 + 2 == 3;
 Console.WriteLine(check);
     </code></pre>
 
-    <h2>演算子を理解する</h2>
+    <h2>算術演算子を理解する</h2>
+
+    <p>
+        算術演算子は、加減乗除をプログラミング言語上で行う為の演算子です。<br />
+        下記の例では簡単な加減乗除の計算を行い、出力しています。
+    </p>
+
+    <pre><code>
+int a = 5;
+
+a = a + 9;
+Console.WriteLine(a);  // 答え: 14
+
+a = a - 4;
+Console.WriteLine(a);  // 答え: 10
+
+a = a * 2;
+Console.WriteLine(a);  // 答え: 20
+
+a = a / 4;
+Console.WriteLine(a);  // 答え: 5
+
+a = a % 3;
+Console.WriteLine(a);  // 答え: 2
+    </code></pre>
+
+    <p>
+        算術演算子は、=と複合して計算と代入を同時に行うことができます。<br />
+        下記の例は、上記の例と全く同じ意味を持ちます。
+    </p>
+
+    <pre><code>
+int a = 5;
+a += 9;
+Console.WriteLine(a);  // 答え: 14
+
+a -= 4;
+Console.WriteLine(a);  // 答え: 10
+
+a *= 2;
+Console.WriteLine(a);  // 答え: 20
+
+a /= 4;
+Console.WriteLine(a);  // 答え: 5
+
+a %= 3;
+Console.WriteLine(a);  // 答え: 2
+    </code></pre>
+
+    <p>
+        算術演算子には、途中経過に括弧をつけることで計算の優先順位を変更することができます。
+    </p>
+    
+    <pre><code>
+Console.WriteLine(2 + 2 * 2);   // 答え: 6
+Console.WriteLine((2 + 2) * 2); // 答え: 8
+
+Console.WriteLine(9 / 5 / 2);   // 答え: 0
+Console.WriteLine(9 / (5 / 2)); // 答え: 4
+    </code></pre>
+
     <h2>名前空間と型を理解する</h2>
 </body>
 </html>
