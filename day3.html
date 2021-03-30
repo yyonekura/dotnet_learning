@@ -32,7 +32,7 @@
         条件分岐文ifは、プログラム中の条件によって処理を変更したい場合に使用します。
     </p>
 
-    <pre><code>
+    <pre><code class="csharp">
 // 数値の入力を受け付ける
 string inputText = Console.ReadLine();
 int number = int.Parse(inputText);
@@ -50,7 +50,7 @@ else {
         条件分岐文switchは、一つの変数の中身が複数通りに分岐するようなプログラムを書く際に便利な構文です。
     </p>
 
-    <pre><code>
+    <pre><code class="csharp">
 int caseSwitch = 1;
 
 switch (caseSwitch)
@@ -81,7 +81,7 @@ switch (caseSwitch)
         繰り返し文forは、プログラム中で何度も繰り返す処理を記述する際に利用します。
     </p>
     
-    <pre><code>
+    <pre><code class="csharp">
 // 10回繰り返す。
 // セミコロン区切りで、それぞれ
 //（最初の一回のみ実行）；（条件式が成立する限り繰り返す）；（一周ごとの処理）
@@ -96,7 +96,7 @@ for(int i = 0 ; i &lt; 10 ; i++){
         下記の例では、変数の配列に入った一連の数値を一つずつ取り出して出力しています。
     </p>
 
-    <pre><code>
+    <pre><code class="csharp">
 int[] numbers = { 4, 5, 6, 1, 2, 3, -2, -1, 0 };
 foreach (int i in numbers)
 {
@@ -111,7 +111,7 @@ foreach (int i in numbers)
         下記の例では、continue文でfor文の先頭に戻っています。
     </p>
 
-    <pre><code>
+    <pre><code class="csharp">
 // 0から9の数のうち、奇数のみ出力する。
 for(int i = 0 ; i &lt; 10 ; i++){
     if(i % 2 == 0){
@@ -134,7 +134,7 @@ for(int i = 0 ; i &lt; 10 ; i++){
         例として、下記のように実数型と整数型では格納可能な値に違いが出ます。
     </p>
 
-    <pre><code>
+    <pre><code class="csharp">
 // 実数の値を代入
 double doublenumber = 3.14;
 
@@ -154,7 +154,7 @@ Console.WriteLine(intnumber);
         if文の条件に利用する比較式は、条件が成立していた場合にはtrueを、そうでなければfalseを結果として返す動作をします。
     </p>
 
-    <pre><code>
+    <pre><code class="csharp">
 // 比較式が正しければTrue、誤りであればFalseが表示される
 Console.WriteLine(1 + 2 == 3);
 Console.WriteLine(10 + 1 == 1);
@@ -171,7 +171,7 @@ Console.WriteLine(check);
         下記の例では簡単な加減乗除の計算を行い、出力しています。
     </p>
 
-    <pre><code>
+    <pre><code class="csharp">
 int a = 5;
 
 a = a + 9;
@@ -195,7 +195,7 @@ Console.WriteLine(a);  // 答え: 2
         下記の例は、上記の例と全く同じ意味を持ちます。
     </p>
 
-    <pre><code>
+    <pre><code class="csharp">
 int a = 5;
 a += 9;
 Console.WriteLine(a);  // 答え: 14
@@ -217,7 +217,7 @@ Console.WriteLine(a);  // 答え: 2
         算術演算子には、途中経過に括弧をつけることで計算の優先順位を変更することができます。
     </p>
     
-    <pre><code>
+    <pre><code class="csharp">
 Console.WriteLine(2 + 2 * 2);   // 答え: 6
 Console.WriteLine((2 + 2) * 2); // 答え: 8
 
@@ -225,6 +225,95 @@ Console.WriteLine(9 / 5 / 2);   // 答え: 0
 Console.WriteLine(9 / (5 / 2)); // 答え: 4
     </code></pre>
 
-    <h2>名前空間と型を理解する</h2>
+    <h2>比較演算子を理解する</h2>
+
+    <p>
+        &lt; (小なり)、&gt; (大なり)、&lt;= (以下)、および &gt;= (以上) 比較演算子は、関係演算子とも呼ばれ、式や数値の比較に使用されます。<br />
+        整数と実数型のすべての数値型で、これらの比較演算子を使用することができます。<bt />
+        比較演算子を式として見た場合、その答えは論理型（TrueかFalse）になります。
+    </p>
+
+    <pre><code class="csharp">
+// 小なり
+Console.WriteLine(7.0 &lt; 5.1);   // 答え: False
+Console.WriteLine(5.1 &lt; 5.1);   // 答え: False
+Console.WriteLine(0.0 &lt; 5.1);   // 答え: True
+
+Console.WriteLine(double.NaN &lt; 5.1);   // 答え: False
+Console.WriteLine(double.NaN &gt;= 5.1);  // 答え: False
+
+// 大なり
+Console.WriteLine(7.0 &gt; 5.1);   // 答え: True
+Console.WriteLine(5.1 &gt; 5.1);   // 答え: False
+Console.WriteLine(0.0 &gt; 5.1);   // 答え: False
+
+Console.WriteLine(double.NaN > 5.1);   // 答え: False
+Console.WriteLine(double.NaN &lt;= 5.1);  // 答え: False
+
+// 以下
+Console.WriteLine(7.0 &lt;= 5.1);   // 答え: False
+Console.WriteLine(5.1 &lt;= 5.1);   // 答え: True
+Console.WriteLine(0.0 &lt;= 5.1);   // 答え: True
+
+Console.WriteLine(double.NaN &gt; 5.1);   // 答え: False
+Console.WriteLine(double.NaN &lt;= 5.1);  // 答え: False
+
+// 以上
+Console.WriteLine(7.0 &gt;= 5.1);   // 答え: True
+Console.WriteLine(5.1 &gt;= 5.1);   // 答え: True
+Console.WriteLine(0.0 &gt;= 5.1);   // 答え: False
+
+Console.WriteLine(double.NaN &lt; 5.1);   // 答え: False
+Console.WriteLine(double.NaN &gt;= 5.1);  // 答え: False
+    </code></pre>
+
+    <h2>名前空間を理解する</h2>
+
+    <p>
+        名前空間 namespace とは、C#のソースコードを機能別に切り分ける仕組みです。<br />
+        名前空間が異なれば、関数名やクラス名が同じでも機能が異なるものを共存させることができます。<br />
+        システムが用意している標準ライブラリの機能も名前空間が定義されており、下記のように完全名でも、名前空間を指定して省略できるようにもできます。
+    </p>
+    
+    <pre><code class="csharp">
+// 省略しない場合
+System.Console.WriteLine("Hello World!");
+    </code></pre>
+    
+    <pre><code class="csharp">
+// 名前空間を指定して省略する場合
+using System;
+Console.WriteLine("Hello World!");
+    </code></pre>
+
+    <p>
+        下記の構文で、独自の名前空間を定義することもできます。
+    </p>
+    
+    <pre><code class="csharp">
+namespace SampleNamespace
+{
+    public class SampleClass
+    {
+        public void SampleMethod()
+        {
+            System.Console.WriteLine(
+                "SampleMethod inside SampleNamespace");
+        }
+    }
+}
+
+namespace OtherNamespace
+{
+    public class SampleClass
+    {
+        public void SampleMethod()
+        {
+            System.Console.WriteLine(
+                "SampleMethod inside OtherNamespace");
+        }
+    }
+}
+    </code></pre>
 </body>
 </html>
